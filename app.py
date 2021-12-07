@@ -2,6 +2,12 @@ from flask import Flask, request, jsonify
 import werkzeug
 app = Flask(__name__)
 
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+
 @app.route('/upload', methods=["POST"])
 def upload():
     if request.method == "POST" :
